@@ -1,0 +1,227 @@
+Delivered-To: shubham845.be22@chitkara.edu.in
+Received: by 2002:a05:7000:bd25:b0:85b:c2e0:18f with SMTP id gi37csp1123969mab;
+        Sun, 17 May 2026 03:37:06 -0700 (PDT)
+X-Received: by 2002:a17:903:903:b0:2bd:5ddd:17ab with SMTP id d9443c01a7336-2bd7e8f915dmr117571455ad.32.1779014226562;
+        Sun, 17 May 2026 03:37:06 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1779014226; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=i07X68bhQ4X4QohIqJuuhB4amYd3eSTuTpaZZToRb7oGZ7QrJCcu6x+S9H17Y65RdC
+         mEV2BTEDv6qpOgdvPibTEeoSXCWU9KX3baJ3LQy3IXIQ9eTCpyqJeVz8BjuIUiv+3N49
+         Xnoh7J2sO8rtDn530N0WrgkRZ8gtzoy79sqsHRQecoCq26nTlQ6NPCJTJEEQh/gfse+9
+         TFw8MtP99DSU/3Xi4ns0PqeDSg40RqnORgqxmFHsuWvwAz80YvlRp65jiTxePm5hWMux
+         xpiTH4NKQVGAurVtjX3yCwAaJq8WblrSHTj9VtPomGdZkb2Kka4k6TWsc/gXmvdBFh4g
+         +7cA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=request-id:client-request-id:mime-version:date:subject:to:from
+         :sender:dkim-signature:message-id;
+        bh=UerMlZoF25E/L36qjd3CRhqBoA1R9a4UNaeYxW5IEow=;
+        fh=t7t/o8Xu1vhubtvbxWgo6YIamJU29bw6ntcT+fsALdY=;
+        b=eWQ3/MwXNH/2EwylIYE1VsaETlsLpBkBUJ+Rkj+oSmSeCWQhnNfVX37zKVJUvFrBFW
+         4PGR/ErDoM0NjH8vSEMe1hfKcluR4r0Xk6Gs6x3Qyfu7ebr3ozpE9wDUeVTMughJ2BJM
+         gxprTDjftpKtVu7FbE8Z5Sp2W+JLznmhcm2YK20GXxNweTYkgOxVMs6g2W6rXrtXL/Vg
+         cSAJ9Rieh/3a65d7Vw9eG7lA/QBiKRp5afSQQNFpzwZHzvakXqnSc1/28QJglircHPy3
+         mx7rt3Qc96lk5OVTHx80qyRVAO/Fh4kBEqSold6MKhLc9DmZE/74O8SwYd/tvTrCSmjh
+         cIYw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@msr-cmt.org header.s=s1024 header.b=p+Wp3Way;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of noreply@msr-cmt.org designates 40.93.14.107 as permitted sender) smtp.mailfrom=noreply@msr-cmt.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=msr-cmt.org
+Return-Path: <noreply@msr-cmt.org>
+Received: from SA9PR02CU001.outbound.protection.outlook.com (mail-southcentralusazacs10203107.outbound.protection.outlook.com. [40.93.14.107])
+        by mx.google.com with ESMTPS id d9443c01a7336-2bd5bd696e6si200374515ad.22.2026.05.17.03.37.06
+        for <shubham845.be22@chitkara.edu.in>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 17 May 2026 03:37:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@msr-cmt.org designates 40.93.14.107 as permitted sender) client-ip=40.93.14.107;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@msr-cmt.org header.s=s1024 header.b=p+Wp3Way;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of noreply@msr-cmt.org designates 40.93.14.107 as permitted sender) smtp.mailfrom=noreply@msr-cmt.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=msr-cmt.org
+Message-ID: <6a099a52.991c1eb9.30454d.0cb7SMTPIN_ADDED_BROKEN@mx.google.com>
+X-Google-Original-Message-ID: <[e214851e19db4998b3eaa03e2610ded1-JFZGS42DN5WW25LONFRWC5DJN5XFA3DBORTG64TNFVIHE33EFVBEYMSQPRWXG4TDNV2HYRLNMFUWYVDFON2HYRLYN5JW25DQ@microsoft.com]>
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=n3uS4jtiG0ZE5b/UGg3JIshxG1yg0fxdWMSonSWvUszR1tf8y0WZz9qivHfypFUW7mCuPXV9iBp6p0UbpSi1K5pFeSLFDRqLDLc291YNbxyf68WXd77lMmdQJmRv660ZMUDcXqEhyQPHDplgjRqZcbaa9rw/z5Ii/Y1J2mwdSZuqhq3/12CnuxX9e1hJI/w6YTXWj9FFkuqQJ3nnXAB+RytnsA9Id9sLj/SkdFwWd+ZSZuOu1nNaf98QvXVSEUugtTNHEfKyIj16CbNtJq6gXHASc6FLSEesPUcUYmznwC3qO58O1SEh9a+1nR1VSlJUrGRxr2gfztGcHCHiD1QS6g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=UerMlZoF25E/L36qjd3CRhqBoA1R9a4UNaeYxW5IEow=;
+ b=k/kku3CL/LCncL53FwqZZsA1NaMF+xQvYsAkK1svh9Y7QB5fSNqXyfIJnbk0xOzLjdnaAI7Y4cWcZbHaBPFT+sAkUjWbWs6oT1hPtlGNgZnXAKgEZHhPJEYhTqLW0nnq9kxZB9LtYhd1Ay6iIaIUwz2bgvVXAG/Bwff6tmXaf4Qs85KOEI8ThQ9HWBZjAXAZmg2hMJHhymIx1JXiLPoj3ILMbvM4TYA17mxkhpgGfTeAjyfdN9loJeBAVfdV0Js6toag33GkpYtITCv1vsyyNMp1MDTGD8AXvwG1rpT8x8vTsqi7yFXluRTqIJ3aLmRK+cw6JGHrex3JVP+hyQzTlA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from substrate.office.com (2603:10b6:408:233::6) by
+ LV8PR16MB6524.namprd16.prod.outlook.com with HTTP via
+ SJ0PR13CA0133.NAMPRD13.PROD.OUTLOOK.COM; Sun, 17 May 2026 10:37:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; d=msr-cmt.org; s=s1024; c=relaxed/relaxed;
+	t=1779014224; h=from:to:cc:subject:date:messageid;
+	bh=UerMlZoF25E/L36qjd3CRhqBoA1R9a4UNaeYxW5IEow=;
+	b=p+Wp3WayvyaqoxI/iQeSSvpwcaP5pSyJltyCPwpBW9ex3JRb62ZGK5xVqnJ2sSqE/DhV5maIp0u
+	Btoh7g+gKYYxTdWlmkPJ9gff82JKnEjrzl7Dg6RNW5tYwEXNZMKQzOBWEKBQpphUIbB5fYa9elhSk
+	z+Qjfg7gug3yvIExXuw=
+Sender: Microsoft CMT <noreply@msr-cmt.org>
+From: Microsoft CMT <noreply@msr-cmt.org>
+To: shubham845.be22@chitkara.edu.in
+Subject: The 7th Applied Engineering Conference : Submission (117) has been
+ created.
+Date: Sun, 17 May 2026 10:37:04 +0000
+X-MS-Iris-MetaData: =?utf-8?q?{=22Type=22=3Anull=2C=22Fields=22=3A{=22InstanceID=22=3A=22e214851e-19db-4998-b3ea-?=
+ =?utf-8?q?a03e2610ded1=22=2C=22ActivityID=22=3A=229ea8bef0-f804-40c5-94d7-fa51e8eb2?=
+ =?utf-8?q?50a=22}}?=
+MIME-Version: 1.0
+X-TsbHttpDeliveryResponseType: Success
+Content-Type: multipart/alternative; boundary="=-+qcdZPF+2ZPIgvKGWWB4FQ=="
+X-MS-PublicTrafficType: Email
+client-request-id: e214851e-19db-4998-b3ea-a03e2610ded1
+request-id: e214851e-19db-4998-b3ea-a03e2610ded1
+Return-Path: noreply@msr-cmt.org
+X-MS-TrafficTypeDiagnostic: LV8PR16MB6524:EE_ICP
+X-MS-Exchange-SenderADCheck: 0
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|376014|61400799027|19092799006|7149299003|69100299015|8096899003|4076899003|16102099003|18002099003|14018399003|13003099007|3023799003|56012099003|15920700032;
+X-Microsoft-Antispam-Message-Info:
+	2+wpZMxwp72RBt2uUXYBVLYdOyVx9yR0OtnnCAcESG6y18BcP3ujiC3ZeR7Wnba+9EG/yR7th4eLo17phCYWRUTZbOXYyKkLcLMlG2ak+JQzPguFqttGDRC/JrAP1g80B7gSy3Oc3ShwO1H/OC8is94bO2WEJcpcxa1tiDs5njm0oSaL5Uha5+nuUdTtnZMKRrhckWxg2PzSB5l7Z/+0XrwcpMcbXeAYQzTwgJfw0HyDrVsgqxjQYw5u2jn2Hblh1nHD1sGy6ZWQoKTrfrm0LO6tl4Ly50gKLDzwE+X7V0dhdB2K9k9EdiI13kfIDrv0GwIgLY5/51oL6N6vt/VNWnZhbBsBuK3EN0fd6CwSTZ22yxKj3yxEREBMK1nLXCZyhiJ0xLV1sufI92MsHqpNr+GnkKcCszs+aiIhWowOZHKWPVd7t6VIMFh9N/cdtjSPe3GYplesNEGCUWX9zTXyR6an03e7pr0NwaUY/ayP8SRH6tV8RSNhScuoXXFXBL/7oKCxA5UEO1P03oW6IvOZHYwWkq1o9LG5yvJLmjAs4KAPJuN2pjpGCt/XsdJpHZELIqEvcse1rPowOleJGCfQO0tGGIkzfOVRuv84eQlMA2qz3l23hpudtaIsXlQTaHM/l2LA8nD+r/ErLoPgQuYjNA==
+X-Forefront-Antispam-Report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:;PTR:;CAT:NONE;SFS:(13230040)(376014)(61400799027)(19092799006)(7149299003)(69100299015)(8096899003)(4076899003)(16102099003)(18002099003)(14018399003)(13003099007)(3023799003)(56012099003)(15920700032);DIR:OUT;SFP:1020;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	cD5j1Iiy+3vU3FYBTiJ1yUXo3GmFmglT9mXOJ9QYuq/P06h2UPSFrbkNdRRKtkTmwSbDPd3b3nK9aByBGfu4KY6VPL+ETra4ECAKb6tYnLsJnAjBlciGYE0OXOG61nLNN+ThdAOiG4bl/CWueN8IlX/8ZSML/Baf1hkJipB1/SbLZfy8Ghoos//fHGG0w4vluaLgClqT0Y4yWmip+2SqcE88SDxviKnhmLmImJYNpa1lduRAEMXOn1m73rskUHcL6+6hMlxnNYFkjemOwOLENPSXfBbeW/zC038R2B8wnzO6bHtHax5GxGZbF3zrO0xdkATHepLPadTeZ/Sxgkgb2vq6F7IGGyWCsmWxo1mDbvUw1nOY9222cB7W9Ar7ojujBAyw+ZVYHN2Q+mpSuyZuddrLmQ7VxcSnR9Vw9UiUS4bYT8F5XCxRhgL0R9OltqMXC88nZ0A2KEecgrEL7Egt4bx94otxnubh+ig/q/bii6aE+1/OMohqjMJZtRvY+mWYoOWNIQxLCUta7LizTAlpKDG5xtxzlWT20mrjko8jHHbo7f6CFrjeLdnxH6EZnm/ew7QHfli7sP4r6VKCz1AkNVOOLy6qW2QqeWWJP+jBnFmx5OYa9lU1PkOvF/dE+POszsfhQ/lIszBkitMtJOLxmM/FZa3Imk6Dwa0HSNdYcWLSd6atsaDYSKXpaaiJVlPl
+X-OriginatorOrg: ideasprod07.onmicrosoft.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: HttpSubmission-LV8PR16MB6524
+X-MS-Exchange-CrossTenant-Id: aec3f8d9-c3fc-4d26-a9ac-9d12fd74946a
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 May 2026 10:37:04.0738 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id:
+	3e6d82d0-6df8-4fa1-86c8-08deb4003c85
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV8PR16MB6524
+
+--=-+qcdZPF+2ZPIgvKGWWB4FQ==
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hello,
+
+The following submission has been created.
+
+Track Name: Computer Engineering=20
+
+Paper ID: 117
+
+Paper Title: Social Media Analytics for Trend Prediction Using Machine Lear=
+ning
+
+Abstract:
+With the surge in popularity of social media platforms, a new, large-time d=
+ata source created by users has emerged, such as posts, hashtags, comments =
+and shares, which are all indicative of real-time opinions and trends that =
+capture the zeitgeist of the public. Trend analysis is a task tackled by ma=
+ny existing tools which is usually done through occasional surveys and the =
+data typically gathered from the past. Trend analysis has not been agile en=
+ough to maintain pace with the real-time discussion taking place on social =
+media. In the present work, a comprehensive machine learning (ML) framework=
+ is proposed to predict trends on social media based on Natural Language Pr=
+ocessing (NLP) for pre-processing different types of classifiers. We extrac=
+t a multi-dimensional feature space from the text based on TF-IDF vectorisa=
+tion and hashtag frequency and engagement. Three supervised classifiers =E2=
+=80=93 Logistic Regression, Naive Bayes, Random Forest =E2=80=93 are traine=
+d, evaluated and compared. Results of our experiments indicate that, the Ra=
+ndom Forest has the highest accuracy in predicting the trend (91%) among th=
+e rest other models in all the metrics. Time-series visualisations that con=
+firm the capability of the system to predict a trend onset by 4.2 hours ahe=
+ad as well.
+
+Created on: Sun, 17 May 2026 10:36:54 GMT
+
+Last Modified: Sun, 17 May 2026 10:36:54 GMT
+
+Authors:
+     - shubham845.be22@chitkara.edu.in (Primary)
+
+Secondary Subject Areas: Not Entered
+
+Submission Files:=20
+    Shubham_ResearchPaper.docx (137 Kb, Sun, 17 May 2026 10:36:49 GMT)
+
+Submission Questions Response: Not Entered
+
+Thanks,
+CMT team.
+
+
+Please do not reply to this email as it was generated from an email account=
+ that is not monitored.
+
+
+To stop receiving conference emails, you can check the 'Do not send me conf=
+erence email' box from your User Profile.
+
+Microsoft respects your privacy. To learn more, please read our <a href=3D'=
+https://go.microsoft.com/fwlink/?LinkId=3D521839'>Privacy Statement</a>.
+
+Microsoft Corporation
+One Microsoft Way
+Redmond, WA 98052=
+
+--=-+qcdZPF+2ZPIgvKGWWB4FQ==
+Content-Type: text/html; charset=utf-8
+Content-Id: <72bcf145-f0ad-4214-84ac-124a97756670>
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldGEgY2hhcnNldD0idXRmLTgiPjwvaGVhZD48
+Ym9keT48cHJlIHN0eWxlPSJmb250LWZhbWlseTogbW9ub3NwYWNlOyB3aGl0ZS1zcGFjZTogcHJl
+LXdyYXA7Ij5IZWxsbywKClRoZSBmb2xsb3dpbmcgc3VibWlzc2lvbiBoYXMgYmVlbiBjcmVhdGVk
+LgoKVHJhY2sgTmFtZTogQ29tcHV0ZXIgRW5naW5lZXJpbmcgCgpQYXBlciBJRDogMTE3CgpQYXBl
+ciBUaXRsZTogU29jaWFsIE1lZGlhIEFuYWx5dGljcyBmb3IgVHJlbmQgUHJlZGljdGlvbiBVc2lu
+ZyBNYWNoaW5lIExlYXJuaW5nCgpBYnN0cmFjdDoKV2l0aCB0aGUgc3VyZ2UgaW4gcG9wdWxhcml0
+eSBvZiBzb2NpYWwgbWVkaWEgcGxhdGZvcm1zLCBhIG5ldywgbGFyZ2UtdGltZSBkYXRhIHNvdXJj
+ZSBjcmVhdGVkIGJ5IHVzZXJzIGhhcyBlbWVyZ2VkLCBzdWNoIGFzIHBvc3RzLCBoYXNodGFncywg
+Y29tbWVudHMgYW5kIHNoYXJlcywgd2hpY2ggYXJlIGFsbCBpbmRpY2F0aXZlIG9mIHJlYWwtdGlt
+ZSBvcGluaW9ucyBhbmQgdHJlbmRzIHRoYXQgY2FwdHVyZSB0aGUgemVpdGdlaXN0IG9mIHRoZSBw
+dWJsaWMuIFRyZW5kIGFuYWx5c2lzIGlzIGEgdGFzayB0YWNrbGVkIGJ5IG1hbnkgZXhpc3Rpbmcg
+dG9vbHMgd2hpY2ggaXMgdXN1YWxseSBkb25lIHRocm91Z2ggb2NjYXNpb25hbCBzdXJ2ZXlzIGFu
+ZCB0aGUgZGF0YSB0eXBpY2FsbHkgZ2F0aGVyZWQgZnJvbSB0aGUgcGFzdC4gVHJlbmQgYW5hbHlz
+aXMgaGFzIG5vdCBiZWVuIGFnaWxlIGVub3VnaCB0byBtYWludGFpbiBwYWNlIHdpdGggdGhlIHJl
+YWwtdGltZSBkaXNjdXNzaW9uIHRha2luZyBwbGFjZSBvbiBzb2NpYWwgbWVkaWEuIEluIHRoZSBw
+cmVzZW50IHdvcmssIGEgY29tcHJlaGVuc2l2ZSBtYWNoaW5lIGxlYXJuaW5nIChNTCkgZnJhbWV3
+b3JrIGlzIHByb3Bvc2VkIHRvIHByZWRpY3QgdHJlbmRzIG9uIHNvY2lhbCBtZWRpYSBiYXNlZCBv
+biBOYXR1cmFsIExhbmd1YWdlIFByb2Nlc3NpbmcgKE5MUCkgZm9yIHByZS1wcm9jZXNzaW5nIGRp
+ZmZlcmVudCB0eXBlcyBvZiBjbGFzc2lmaWVycy4gV2UgZXh0cmFjdCBhIG11bHRpLWRpbWVuc2lv
+bmFsIGZlYXR1cmUgc3BhY2UgZnJvbSB0aGUgdGV4dCBiYXNlZCBvbiBURi1JREYgdmVjdG9yaXNh
+dGlvbiBhbmQgaGFzaHRhZyBmcmVxdWVuY3kgYW5kIGVuZ2FnZW1lbnQuIFRocmVlIHN1cGVydmlz
+ZWQgY2xhc3NpZmllcnMg4oCTIExvZ2lzdGljIFJlZ3Jlc3Npb24sIE5haXZlIEJheWVzLCBSYW5k
+b20gRm9yZXN0IOKAkyBhcmUgdHJhaW5lZCwgZXZhbHVhdGVkIGFuZCBjb21wYXJlZC4gUmVzdWx0
+cyBvZiBvdXIgZXhwZXJpbWVudHMgaW5kaWNhdGUgdGhhdCwgdGhlIFJhbmRvbSBGb3Jlc3QgaGFz
+IHRoZSBoaWdoZXN0IGFjY3VyYWN5IGluIHByZWRpY3RpbmcgdGhlIHRyZW5kICg5MSUpIGFtb25n
+IHRoZSByZXN0IG90aGVyIG1vZGVscyBpbiBhbGwgdGhlIG1ldHJpY3MuIFRpbWUtc2VyaWVzIHZp
+c3VhbGlzYXRpb25zIHRoYXQgY29uZmlybSB0aGUgY2FwYWJpbGl0eSBvZiB0aGUgc3lzdGVtIHRv
+IHByZWRpY3QgYSB0cmVuZCBvbnNldCBieSA0LjIgaG91cnMgYWhlYWQgYXMgd2VsbC4KCkNyZWF0
+ZWQgb246IFN1biwgMTcgTWF5IDIwMjYgMTA6MzY6NTQgR01UCgpMYXN0IE1vZGlmaWVkOiBTdW4s
+IDE3IE1heSAyMDI2IDEwOjM2OjU0IEdNVAoKQXV0aG9yczoKICAgICAtIHNodWJoYW04NDUuYmUy
+MkBjaGl0a2FyYS5lZHUuaW4gKFByaW1hcnkpCgpTZWNvbmRhcnkgU3ViamVjdCBBcmVhczogTm90
+IEVudGVyZWQKClN1Ym1pc3Npb24gRmlsZXM6IAogICAgU2h1YmhhbV9SZXNlYXJjaFBhcGVyLmRv
+Y3ggKDEzNyBLYiwgU3VuLCAxNyBNYXkgMjAyNiAxMDozNjo0OSBHTVQpCgpTdWJtaXNzaW9uIFF1
+ZXN0aW9ucyBSZXNwb25zZTogTm90IEVudGVyZWQKClRoYW5rcywKQ01UIHRlYW0uPGJyIC8+PGJy
+IC8+PGJyIC8+UGxlYXNlIGRvIG5vdCByZXBseSB0byB0aGlzIGVtYWlsIGFzIGl0IHdhcyBnZW5l
+cmF0ZWQgZnJvbSBhbiBlbWFpbCBhY2NvdW50IHRoYXQgaXMgbm90IG1vbml0b3JlZC48YnIgLz48
+YnIgLz48YnIgLz5UbyBzdG9wIHJlY2VpdmluZyBjb25mZXJlbmNlIGVtYWlscywgeW91IGNhbiBj
+aGVjayB0aGUgJ0RvIG5vdCBzZW5kIG1lIGNvbmZlcmVuY2UgZW1haWwnIGJveCBmcm9tIHlvdXIg
+VXNlciBQcm9maWxlLjxiciAvPjxiciAvPk1pY3Jvc29mdCByZXNwZWN0cyB5b3VyIHByaXZhY3ku
+IFRvIGxlYXJuIG1vcmUsIHBsZWFzZSByZWFkIG91ciA8YSBocmVmPSdodHRwczovL2dvLm1pY3Jv
+c29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5Jz5Qcml2YWN5IFN0YXRlbWVudDwvYT4uPGJy
+IC8+PGJyIC8+TWljcm9zb2Z0IENvcnBvcmF0aW9uPGJyIC8+T25lIE1pY3Jvc29mdCBXYXk8YnIg
+Lz5SZWRtb25kLCBXQSA5ODA1MjwvcHJlPjxpbWcgc3JjPSdodHRwczovL211Y3AuYXBpLmFjY291
+bnQubWljcm9zb2Z0LmNvbS9tL3YyL3Y/ZD1BSUFBQ0NYU0tMSjJHMzY0TzVHMlJZSk5HNzU2TUJU
+WUZDN0U0VkQ0NFRRQTVOV1JVMjNESkQzQ0xNRVpYUkQ2N040WUw0NkxGTFE1M0VESzdEN0I0RlVM
+WEE3RDdVR0xPSVZaQkJVUVRIRVo3Slk0RUdaNldMM01VVDNHTjY1U0E2RVhJSFFJWlpHU01RVEJX
+VUZQUkxCSkJMT09CNUEmaT1BSUFBREZNSUhZN0g0M0pXSUJFU1hVR0hKWVBFN0ozUzdSQTVFTk83
+VVpDN1RYNEZURDQ3U0JTWFpHQkpSNFhVQ1VJSTNXWkVDVjVJQlJXQlNBWERNTVpXTDJYRk9NVllP
+Wk9UVUZSRVZCQU9KSTZKV0lLNUFBWUlTVEhQTU81Q1pIT0FPVVRGR1VWUkJKM0ZDUUROWlRIR1NJ
+NzdFTTJXT0hHV05RT1ZFQUlIMlhXU0VSWVdZSkQ3Ulg3NFJPNllGQlhSQlZRV0dWVVFZV1pLM1ZO
+TlZWSE81WTVBUlpBV0ZPSkg3VjZYVTI3Mk9JQllSS0xESDNXT0VXWkpFRlM0UVZCN1ZMUjdYNk1R
+RFNON0tIRVo1S0lBQlFKRTZMQScgd2lkdGg9JzEnIGhlaWdodD0nMScgdGFiaW5kZXg9Jy0xJyBh
+cmlhLWhpZGRlbj0ndHJ1ZScgYWx0PScnIC8+PC9ib2R5PjwvaHRtbD48IS0tIGNWOiArejhHOWY0
+VXFrS0V3NlZGLjMuMS4xLjQgLS0+
+
+--=-+qcdZPF+2ZPIgvKGWWB4FQ==--
