@@ -1,6 +1,6 @@
 # Social Media Analytics for Trend Prediction Using Machine Learning
 
-> Companion code for the IEEE-formatted research paper by **Sneha Pal**  
+> Companion code for the IEEE-formatted research paper by **Shubham Goyal**  
 > Department of Computer Science and Engineering, Chitkara University, Punjab, India
 
 ---
@@ -151,5 +151,5 @@ The `trending` column should be `1` (trending) or `0` (not trending).
 
 ## 👤 Author
 
-**Sneha Pal** — B.E. Computer Science and Engineering, Chitkara University Institute of Engineering and Technology, Punjab, India  
-sneh996.be22@chitkara.edu.in
+**Shubham Goyal** — B.E. Computer Science and Engineering, Chitkara University Institute of Engineering and Technology, Punjab, India  
+shubham845.be22@chitkara.edu.in
